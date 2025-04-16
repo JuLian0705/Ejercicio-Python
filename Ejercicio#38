@@ -1,0 +1,6 @@
+print("Si a un numero le quitas 13, obtiene 91. ¿Cual es el numero?")
+
+resultado = 91 
+numero = resultado + 13
+
+print(f"El numero es: {numero}")
