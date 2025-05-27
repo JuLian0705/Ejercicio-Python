@@ -1,7 +1,12 @@
-canguro_meses_por_año = 20
-canguro_por_semanas = 6
+import http from 'k6/http';
+import { sleep } from 'k6';
 
-fraccion_de_año = 1 / 4
+export let options = {
+  vus: 1000, // usuarios virtuales
+  duration: '30s', // tiempo de prueba
+};
 
-total_semanas = fraccion_de_año * canguro_meses_por_año * canguro_por_semanas
-print(f"En un cuarto de canguro-año hay {total_semanas} canguro-semanas.")
+export default function () {
+  http.get('https://tusitioenetlify.netlify.app');
+  sleep(1);
+}
